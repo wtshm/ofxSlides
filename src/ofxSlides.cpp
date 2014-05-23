@@ -54,7 +54,7 @@ void ofxSlides::update(ofEventArgs &args) {
 }
 
 void ofxSlides::keyPressed(ofKeyEventArgs &args) {
-	if( args.key == OF_KEY_RIGHT || args.key == OF_KEY_LEFT ) {
+	if( args.key == OF_KEY_RIGHT || args.key == OF_KEY_DOWN || args.key == ' ' || args.key == OF_KEY_LEFT || args.key == OF_KEY_UP ) {
 		count = 0;
 		
 		// refresh video update flags
@@ -67,11 +67,11 @@ void ofxSlides::keyPressed(ofKeyEventArgs &args) {
 		}
 	}
 	
-	if( args.key == OF_KEY_RIGHT ) {
+	if( args.key == OF_KEY_RIGHT || args.key == OF_KEY_DOWN || args.key == ' ' ) {
 		page++;
 	}
 	
-	if( args.key == OF_KEY_LEFT ) {
+	if( args.key == OF_KEY_LEFT || args.key == OF_KEY_UP ) {
 		if( page > 0 ) {
 			page--;
 		}
